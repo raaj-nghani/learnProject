@@ -1,0 +1,11 @@
+list = [1,4,2,3,6]
+#list.sort()
+#list.insert(4,5)
+#list.reverse()
+#print(list)
+#print(list[:5:-1])
+#print(min(list))
+list.append(7)
+list.insert(2,30)
+list.copy()
+print(list)
