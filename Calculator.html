@@ -5,50 +5,91 @@
     <title>Calculator</title>
     <style type = "text/css">
         table {
-        margin: auto;
-        width: 500px;
-        background:#ccc;
+            margin: auto;
+            width: 500px;
+            background:#ccc;
         }
         table tr td{
-        padding: 10px;
+            padding: 10px;
         }
         table button{
-        widht: 40px;
-        height: 40px;
-        border: none
-        background: blue;
-        border: 50%}
+            widht: 40px;
+            height: 40px;
+            border: none
+            background: blue;
+
+            border: 50%}
+        table input{
+            width: 90%;
+            border-radius: 10px;
+            height: 30px;
+            text-align: right;
+
+        }
     </style>
+    <script type="text/javascript">
+        function storeData(v){
+            var textInput = document.getElementById('textInput')
+            var oldvalue=textInput.value;
+            var t = oldvalue.length;
+            var lastChr = oldvalue[t-1];
+            console.log(lastChr);
+
+            var oprSym=["+","-","*","/","."];
+            if(oprSym.includes(v)){
+                var removeLast = oldvalue.slice(0,-1);
+                console.log(removeLast)
+                }
+                else{
+                    textInput.value=oldvalue+v;
+                }
+            }
+            else{
+                textInput.value.oldvalue+v;     
+            }
+        function calData(){
+            var textInput=document.getElementById("textInput");
+            var oldvalue = eval(textInput.value);
+            textInput.value=oldvalue;
+        }
+
+
+    </script> 
+        
+         
+   
+       
+        
 </head>
 <body>
-    <table>
+    <table border="1">
         <tr>
             <td><button>C</button></td>
-            <td colspan="3"><input type="text"></td>
+            <td colspan="3"><input type="text" id ="textInput"></td>
         </tr>
         <tr>
-            <td><button>+</button></td>
-            <td><button>1</button></td>
-            <td><button>2</button></td>
-            <td><button>3</button></td>
+            <td><button onclick="storeData('+')">+</button></td>
+            <td><button onclick="storeData('1')">1</button></td>
+            <td><button onclick="storeData('2')">2</button></td>
+            <td><button onclick="storeData('3')">3</button></td>
         </tr>
         <tr>
-            <td><button>-</button></td>
-            <td><button>4</button></td>
-            <td><button>5</button></td>
-            <td><button>6</button></td>
+            <td><button onclick="storeData('-')">-</button></td>
+            <td><button onclick="storeData('4')">4</button></td>
+            <td><button onclick="storeData('5')">5</button></td>
+            <td><button onclick="storeData('6')">6</button></td>
         </tr>
         <tr>
-            <td><button>*</button></td>
-            <td><button>7</button></td>
-            <td><button>8</button></td>
-            <td><button>9</button></td>
+            <td><button onclick="storeData('*')">*</button></td>
+            <td><button onclick="storeData('7')">7</button></td>
+            <td><button onclick="storeData('8')">8</button></td>
+            <td><button onclick="storeData('9')">9</button></td>
         </tr>
         <tr>
-            <td><button>/</button></td>
-            <td><button>.</button></td>
-            <td><button>0</button></td>
-            <td><button>=</button></td>
+            <td><button onclick="storeData('/')">/</button></td>
+            <td><button onclick="storeData('.')">.</button></td>
+            <td><button onclick="storeData('0')">0</button></td>
+            <td><button onclick="calDate()">=</button></td>
         </tr>
     </table>
 
