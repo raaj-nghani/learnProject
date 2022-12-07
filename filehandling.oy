@@ -1,0 +1,1 @@
+  The Python os module enables interaction with the operating system. The os module provides the functions that are involved in file processing operations like renaming, deleting, etc. It provides us the rename() method to rename the specified file to a new name. The syntax to use the rename() method is given below.
